@@ -4,7 +4,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withA11y } from '@storybook/addon-a11y';
 import { withConsole } from '@storybook/addon-console';
 import { host } from 'storybook-host';
-
+import centered from './decorators/centered';
 addParameters({
 
   // @storybook/addon-viewport
@@ -25,6 +25,7 @@ addParameters({
 //   cropMarks: false,
 // }));
 
+addDecorator(centered);
 addDecorator(withKnobs);
 addDecorator(withA11y);
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
